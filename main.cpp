@@ -4,10 +4,11 @@
 
 
 #include <iostream>
-#include <fstream>
 #include <sstream>
 #include "Raccoon.h"
-#include "RaccoonMethods.cpp"
+#include "RaccoonMethods.h"
+#include "ProgramMethods.h"
+#include "Item.h"
 
 using namespace std;
 
@@ -17,17 +18,18 @@ int main() {
     string userEntry;
     int actionChosen;
     fstream saveFile;
-    bool gameEnded = false, validEntry = false, ok = false;
+    bool gameEnded = false, validEntry = false, goBack = false;
     int counter=0;
     Raccoon* pet = new Raccoon();
 
     //TODO: completely overhaul user greeting to make it actually interesting
+    //TODO: save inventory when game is saved
 
     //greet user and give them option of a new game or loading a previous game
     cout<<"R A C C O O N  S I M U L A T O R  2 0 1 9\nby Danielle Drouin (github.com/dndrouin)\n\n";
     //validEntry will only become true if the user has provided either 1 or 2. anything else will prompt the user again to select an action
     while(!validEntry) {
-        cout << "Select an action:\n1. New Raccoon\n2. Load Last Raccoon\n\n";
+        cout << "MAIN MENU\n1. New Raccoon\n2. Load Last Raccoon\nWhat action would you like to take? Enter it here: ";
         cin >> userEntry;
         //TODO: stop letters and symbols from being entered
         actionChosen = stoi(userEntry);
@@ -41,27 +43,53 @@ int main() {
 
     if(actionChosen == 1){
         //Create a new raccoon
-	//TODO: fix raccoonTypesList method so raccoons can be described to user before they pick
         while(!validEntry) {
-            //raccoonTypesList();
-            cout<<"There are 3 raccoons to pick from. What one would you like? Enter the number here: ";
+            //list the available types of raccoons to allow the user to pick which one they would liek to adopt
+            raccoonTypesList();
+            cout<<"\n What number raccoon would you like? Enter it here: ";
             cin >> userEntry;
             actionChosen = stoi(userEntry);
             if(actionChosen > 0 && actionChosen < 4){
                 validEntry = true;
             }
         }
+        //reset validEntry for later reuse
+        validEntry = false;
         //TODO: limit user entry to less than 3 and above 0 no letters etc
         actionChosen = stoi(userEntry);
-        cout<<"Enter a name for your raccoon here: ";
+
         //TODO: allow spaces, do not allow symbols
-        cin >> userEntry;
+        while(!validEntry){
+            //do not allow user to name raccoon null, because "null" is the default name of a raccoon object and how the program tells if a saved raccoon exists to load when Load Last Raccoon is selected
+            cout<<"Enter a name for your raccoon here: ";
+            cin >> userEntry;
+            if(userEntry.compare("null") != 0){
+                validEntry = true;
+            }
+            else{
+                cout << "You can't name your pet that. Try again.\n";
+            }
+        }
+        //reset validEntry for later reuse
+        validEntry = false;
 
         //store user choices in premade raccoon object
         pet->preset = actionChosen;
         pet->name = userEntry;
 
-        cout<<"Raccoon created successfully.\n\n";
+        //give user some items to start with in their inventory
+        //TODO: Remove this!!! replace with actual method that puts some default items in instead
+        Item newItem;
+        pet->addItem(newItem);
+        newItem.nameOfItem = "Pizza";
+        newItem.changeInStats = 50;
+        pet->addItem(newItem);
+
+
+        cout<<"\nRaccoon adopted successfully.\n";
+        saveGame(pet);
+        cout <<"Autosaved!\n\n";
+
     }
     else if(actionChosen == 2){
         //open the most recent save file
@@ -90,61 +118,88 @@ int main() {
                 pet->fun = stoi(token);
             }
             else if(counter == 4){
-                //set fun
+                //set care
                 pet->care = stoi(token);
             }
             else if(counter == 5){
-                //set fun
+                //set hyper
                 pet->hyper = stoi(token);
             }
             else if(counter == 6){
-                //set fun
+                //set smelly
                 pet->smelly = stoi(token);
             }
             else if(counter == 7){
-                //set fun
+                //set dead
                 pet->dead = stoi(token);
+            }
+            else if(counter == 8){
+                //set age
+                pet->age = stoi(token);
             }
             counter++;
         }
+        if(pet->name.compare("null") == 0){
+            //TODO: be a bit more graceful and probably loop them around to the menu again instead of ending the program
+            cout << "Save file not found. Please restart the game and select 'New Raccoon' instead.";
+            gameEnded = true;
+        }
     }
 
-    //while raccoon is alive and the user hasn't seelcted save and exit, keep running the program
+    //while raccoon is alive and the user hasn't selected save and exit, keep running the program
     while(!pet->dead && !gameEnded){
         //TODO: stop letters and symbols from being entered
         //show user the navigation menu and allow them to pick what to do
-        cout<<"Select an action:\n\t1. Stats \n\t2. Feed \n\t3. Play \n\t4. Care \n\t5. Store \n\t6. Inventory \n\t7. Save & Exit\n\n";
+        cout<<"Select an action:\n\t1. Stats \n\t2. Feed \n\t3. Play \n\t4. Care \n\t5. Store \n\t6. Advance to the next day\n\t7. Save & Exit\n\n";
         cin >> userEntry;
         actionChosen = stoi(userEntry);
 
         //if user enters 1, show current raccoon stats
         if(actionChosen == 1){
-            //when user is done viewing stats, must enter number 1 to go back to main menu. this will make ok true and then they can exit the while loop
-            while(!ok) {
+            //when user is done viewing stats, must enter the word "ok" to go back to main menu. this will make goBack true and then they can exit the while loop
+            while(!goBack) {
                 cout << pet->name << "'s Stats\n";
+                cout << "Age: " << pet->age;
+                    //proper grammar - if age is 1 then don't add an 's' to the end of 'day'
+                    if(pet->age == 1){
+                        cout << " day";
+                    }
+                    else{
+                        cout << " days";
+                    }
+                    cout << " old\n";
                 cout << "Hunger: " << pet->hunger << "/100\n";
                 cout << "Fun: " << pet->fun << "/100\n";
                 cout << "Care: " << pet->care << "/100\n";
-                cout << "Enter '1' to return to the menu.";
+                cout << "Enter 'ok' to return to the menu: ";
                 cin >> userEntry;
-                if (stoi(userEntry) == 1) {
-                    ok = true;
+                //TODO: it gets stuck if the user types in anything but ok. stop that from happening
+                //if user enters "ok", bring user back to navigation menu by setting goBack to true
+                if (userEntry.compare("ok") == 0 ) {
+                    goBack = true;
                 }
             }
-            //reset ok for reuse elsewhere
-            ok = false;
+            //reset goBack for reuse elsewhere
+            goBack = false;
         }
         else if(actionChosen == 2){
             //feed
             //TODO: feed, which will list possible food items in inventory to user to feed to their raccoon and will increase their hunger bar, coffee will set raccoons hyper bool to true
+            cout << "Food in your inventory:\n";
+            pet->listItems(1);
+
         }
         else if(actionChosen == 3){
             //play
             //TODO: play, which will list possible play items in inventory to user to play with their raccoon and will increase their fun bar
+            cout << "Toys in your inventory:\n";
+            pet->listItems(2);
         }
         else if(actionChosen == 4){
             //care
             //TODO: care, which will ask user if they want to pet, cuddle or wash their raccoon and will increase care bar and wash sets raccoon's smelly bool to false
+            cout << "Care items in your inventory:\n";
+            pet->listItems(3);
         }
         else if(actionChosen == 5){
             //store
@@ -152,15 +207,41 @@ int main() {
             //TODO: think of a way that the user can get money in the first place, because otherwise this makes no sense
         }
         else if(actionChosen == 6){
-            //inventory
-            //TODO: lists all items regardless of type in the user's inventory. separate subsection for items equipped to raccoon, maybe?
+            //advance to next day
+            //TODO: possibly some randomized things to say before statdecay hits and next day happens to make the game a little less boring
+            //user must type 'ok' when prompted to leave the while loop and continue back to the menu
+            while(!goBack) {
+                cout << "\n\nTaking care of " + pet->name + " is exhausting work, so you decide to take a quick nap.\n";
+                statDecay(pet);
+                cout << "Suddenly, you open your eyes and you realize it's the next day! So much for a quick nap...\n";
+                //check if pet died after statdecay
+                if(pet->checkIfDead() > 0){
+                    //pet has died, set to true so the game will end
+                    pet->dead = true;
+                }
+                //proper grammar - if age is 1 then don't add an 's' to the end of 'day'
+                if (pet->age == 1) {
+                    cout << pet->name << " is now " << pet->age << " day old!\n";
+                } else {
+                    cout << pet->name << " is now " << pet->age << " days old!\n";
+                }
+
+                cout << "Enter 'ok' to continue to the menu: ";
+                cin >> userEntry;
+                //TODO: it gets stuck if the user types in anything but ok. stop that from happening
+                //if user enters "ok", bring user back to navigation menu by setting goBack to true
+                if (userEntry.compare("ok") == 0) {
+                    goBack = true;
+                }
+            }
+
+        //reset goBack for future use
+        goBack = false;
+
         }
         else if(actionChosen == 7){
             //save and exit
-            //creates file and writes raccoon data to it. if file already exists, it will overwrite it.
-            saveFile.open("save.txt", ios_base::out);
-            saveFile << pet->preset << pet->name << "#" << pet->hunger << "#" << pet->fun << "#" << pet->care << "#" << pet->hyper << "#" << pet->smelly << "#" << pet->dead << "#";
-            saveFile.close();
+            saveGame(pet);
             cout << "Save successful.\n";
             cout << "Come back and play again soon! Your raccoon will miss you.";
             //end the game
@@ -176,6 +257,35 @@ int main() {
 
 
 
+    }
+
+    //if the raccoon dies, end the game and inform the user what they did to kill them
+    if(pet->dead){
+        if(pet->checkIfDead() == 1) {
+            //raccoon died from hunger
+            cout << "\n\nUnfortunately, " << pet->name << " has passed away at the ripe old age of " << pet->age
+                 << " from starvation.\n";
+            cout << "TIP: Much like cats, dogs, fish, and even humans, raccoons have to regularly eat to stay alive.\n";
+            cout << "GAME OVER";
+        }
+        if(pet->checkIfDead() == 2) {
+            //raccoon died from care
+            cout << "\n\nUnfortunately, " << pet->name << " has passed away at the ripe old age of " << pet->age
+                 << " from heartbreak caused by lack of care.\n";
+            cout << "TIP: It's generally considered cruel to adopt an animal and then not take care of it.\n";
+            cout << "GAME OVER";
+        }
+        if(pet->checkIfDead() == 3) {
+            //raccoon died from boredom
+            cout << "\n\nUnfortunately, " << pet->name << " has passed away at the ripe old age of " << pet->age
+                 << " from boredom due to lack of fun.\n";
+            cout << "TIP: Fish have no concept of fun, and therefore might be a better pet for you.\n";
+            cout << "GAME OVER";
+        }
+        if(pet->checkIfDead() == 0) {
+            //pet is alive therefore the game should still be running and this message should never show under any circumstance
+            cout << "If you see this, you've broken the game. Try not to do whatever you just did again. Thanks! - Danielle";
+        }
     }
 
 

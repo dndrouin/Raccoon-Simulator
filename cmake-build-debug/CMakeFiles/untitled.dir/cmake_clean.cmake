@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/untitled.dir/Item.cpp.o"
+  "CMakeFiles/untitled.dir/ProgramMethods.cpp.o"
   "CMakeFiles/untitled.dir/Raccoon.cpp.o"
   "CMakeFiles/untitled.dir/RaccoonMethods.cpp.o"
   "CMakeFiles/untitled.dir/main.cpp.o"

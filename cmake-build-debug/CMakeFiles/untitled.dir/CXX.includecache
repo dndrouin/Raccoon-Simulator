@@ -6,31 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/Danielle D/CLionProjects/untitled/Raccoon.h
+/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Item.cpp
+Item.h
+/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Item.h
+Raccoon.h
+/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Raccoon.h
+iostream
+-
+
+/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Item.h
 string
 -
 
-/cygdrive/c/Users/Danielle D/CLionProjects/untitled/RaccoonMethods.cpp
-stdlib.h
+/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Raccoon.h
+string
 -
-iostream
+vector
 -
-RaccoonMethods.h
-/cygdrive/c/Users/Danielle D/CLionProjects/untitled/RaccoonMethods.h
-Raccoon.h
-/cygdrive/c/Users/Danielle D/CLionProjects/untitled/Raccoon.h
-
-/cygdrive/c/Users/Danielle D/CLionProjects/untitled/RaccoonMethods.h
-
-/cygdrive/c/Users/Danielle D/CLionProjects/untitled/main.cpp
-iostream
--
-fstream
--
-sstream
--
-Raccoon.h
-/cygdrive/c/Users/Danielle D/CLionProjects/untitled/Raccoon.h
-RaccoonMethods.cpp
-/cygdrive/c/Users/Danielle D/CLionProjects/untitled/RaccoonMethods.cpp
+Item.h
+/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Item.h
 

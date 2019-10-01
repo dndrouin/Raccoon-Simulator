@@ -48,10 +48,10 @@ RM = "/cygdrive/c/Users/Danielle D/.CLion2019.2/system/cygwin_cmake/bin/cmake.ex
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/cygdrive/c/Users/Danielle D/CLionProjects/untitled"
+CMAKE_SOURCE_DIR = "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/cygdrive/c/Users/Danielle D/CLionProjects/untitled/cmake-build-debug"
+CMAKE_BINARY_DIR = "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/Danielle D/CLionProjects/untitled/cmake-build-debug/CMakeFiles" "/cygdrive/c/Users/Danielle D/CLionProjects/untitled/cmake-build-debug/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug/CMakeFiles" "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/Danielle D/CLionProjects/untitled/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,60 @@ untitled: cmake_check_build_system
 untitled/fast:
 	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/build
 .PHONY : untitled/fast
+
+Item.o: Item.cpp.o
+
+.PHONY : Item.o
+
+# target to build an object file
+Item.cpp.o:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/Item.cpp.o
+.PHONY : Item.cpp.o
+
+Item.i: Item.cpp.i
+
+.PHONY : Item.i
+
+# target to preprocess a source file
+Item.cpp.i:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/Item.cpp.i
+.PHONY : Item.cpp.i
+
+Item.s: Item.cpp.s
+
+.PHONY : Item.s
+
+# target to generate assembly for a file
+Item.cpp.s:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/Item.cpp.s
+.PHONY : Item.cpp.s
+
+ProgramMethods.o: ProgramMethods.cpp.o
+
+.PHONY : ProgramMethods.o
+
+# target to build an object file
+ProgramMethods.cpp.o:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/ProgramMethods.cpp.o
+.PHONY : ProgramMethods.cpp.o
+
+ProgramMethods.i: ProgramMethods.cpp.i
+
+.PHONY : ProgramMethods.i
+
+# target to preprocess a source file
+ProgramMethods.cpp.i:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/ProgramMethods.cpp.i
+.PHONY : ProgramMethods.cpp.i
+
+ProgramMethods.s: ProgramMethods.cpp.s
+
+.PHONY : ProgramMethods.s
+
+# target to generate assembly for a file
+ProgramMethods.cpp.s:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/ProgramMethods.cpp.s
+.PHONY : ProgramMethods.cpp.s
 
 Raccoon.o: Raccoon.cpp.o
 
@@ -213,6 +267,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... untitled"
 	@echo "... edit_cache"
+	@echo "... Item.o"
+	@echo "... Item.i"
+	@echo "... Item.s"
+	@echo "... ProgramMethods.o"
+	@echo "... ProgramMethods.i"
+	@echo "... ProgramMethods.s"
 	@echo "... Raccoon.o"
 	@echo "... Raccoon.i"
 	@echo "... Raccoon.s"

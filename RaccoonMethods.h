@@ -4,20 +4,20 @@
 
 #ifndef RACCOONMETHODS_H
 #define RACCOONMETHODS_H
+#include "Raccoon.h"
 
 
-class RaccoonMethods {
-};
+class RaccoonMethods {};
 
 
 
 void raccoonTypesList();
 
 
-void statDecay();
+void statDecay(Raccoon* pet);
 
 void remindSmelly();
 void hyperAction();
 
 
-#endif //UNTITLED_RACCOONMETHODS_H
+#endif

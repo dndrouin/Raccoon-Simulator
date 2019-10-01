@@ -43,10 +43,10 @@ RM = "/cygdrive/c/Users/Danielle D/.CLion2019.2/system/cygwin_cmake/bin/cmake.ex
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/cygdrive/c/Users/Danielle D/CLionProjects/untitled"
+CMAKE_SOURCE_DIR = "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/cygdrive/c/Users/Danielle D/CLionProjects/untitled/cmake-build-debug"
+CMAKE_BINARY_DIR = "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/untitled.dir/depend.make
@@ -59,48 +59,76 @@ include CMakeFiles/untitled.dir/flags.make
 
 CMakeFiles/untitled.dir/main.cpp.o: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Users/Danielle D/CLionProjects/untitled/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled.dir/main.cpp.o"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled.dir/main.cpp.o -c "/cygdrive/c/Users/Danielle D/CLionProjects/untitled/main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled.dir/main.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled.dir/main.cpp.o -c "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/main.cpp"
 
 CMakeFiles/untitled.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/main.cpp.i"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Users/Danielle D/CLionProjects/untitled/main.cpp" > CMakeFiles/untitled.dir/main.cpp.i
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/main.cpp" > CMakeFiles/untitled.dir/main.cpp.i
 
 CMakeFiles/untitled.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/main.cpp.s"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Users/Danielle D/CLionProjects/untitled/main.cpp" -o CMakeFiles/untitled.dir/main.cpp.s
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/main.cpp" -o CMakeFiles/untitled.dir/main.cpp.s
 
 CMakeFiles/untitled.dir/Raccoon.cpp.o: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/Raccoon.cpp.o: ../Raccoon.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Users/Danielle D/CLionProjects/untitled/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/untitled.dir/Raccoon.cpp.o"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled.dir/Raccoon.cpp.o -c "/cygdrive/c/Users/Danielle D/CLionProjects/untitled/Raccoon.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/untitled.dir/Raccoon.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled.dir/Raccoon.cpp.o -c "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Raccoon.cpp"
 
 CMakeFiles/untitled.dir/Raccoon.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/Raccoon.cpp.i"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Users/Danielle D/CLionProjects/untitled/Raccoon.cpp" > CMakeFiles/untitled.dir/Raccoon.cpp.i
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Raccoon.cpp" > CMakeFiles/untitled.dir/Raccoon.cpp.i
 
 CMakeFiles/untitled.dir/Raccoon.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/Raccoon.cpp.s"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Users/Danielle D/CLionProjects/untitled/Raccoon.cpp" -o CMakeFiles/untitled.dir/Raccoon.cpp.s
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Raccoon.cpp" -o CMakeFiles/untitled.dir/Raccoon.cpp.s
 
 CMakeFiles/untitled.dir/RaccoonMethods.cpp.o: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/RaccoonMethods.cpp.o: ../RaccoonMethods.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Users/Danielle D/CLionProjects/untitled/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/untitled.dir/RaccoonMethods.cpp.o"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled.dir/RaccoonMethods.cpp.o -c "/cygdrive/c/Users/Danielle D/CLionProjects/untitled/RaccoonMethods.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/untitled.dir/RaccoonMethods.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled.dir/RaccoonMethods.cpp.o -c "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/RaccoonMethods.cpp"
 
 CMakeFiles/untitled.dir/RaccoonMethods.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/RaccoonMethods.cpp.i"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Users/Danielle D/CLionProjects/untitled/RaccoonMethods.cpp" > CMakeFiles/untitled.dir/RaccoonMethods.cpp.i
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/RaccoonMethods.cpp" > CMakeFiles/untitled.dir/RaccoonMethods.cpp.i
 
 CMakeFiles/untitled.dir/RaccoonMethods.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/RaccoonMethods.cpp.s"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Users/Danielle D/CLionProjects/untitled/RaccoonMethods.cpp" -o CMakeFiles/untitled.dir/RaccoonMethods.cpp.s
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/RaccoonMethods.cpp" -o CMakeFiles/untitled.dir/RaccoonMethods.cpp.s
+
+CMakeFiles/untitled.dir/ProgramMethods.cpp.o: CMakeFiles/untitled.dir/flags.make
+CMakeFiles/untitled.dir/ProgramMethods.cpp.o: ../ProgramMethods.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/untitled.dir/ProgramMethods.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled.dir/ProgramMethods.cpp.o -c "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/ProgramMethods.cpp"
+
+CMakeFiles/untitled.dir/ProgramMethods.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/ProgramMethods.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/ProgramMethods.cpp" > CMakeFiles/untitled.dir/ProgramMethods.cpp.i
+
+CMakeFiles/untitled.dir/ProgramMethods.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/ProgramMethods.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/ProgramMethods.cpp" -o CMakeFiles/untitled.dir/ProgramMethods.cpp.s
+
+CMakeFiles/untitled.dir/Item.cpp.o: CMakeFiles/untitled.dir/flags.make
+CMakeFiles/untitled.dir/Item.cpp.o: ../Item.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/untitled.dir/Item.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled.dir/Item.cpp.o -c "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Item.cpp"
+
+CMakeFiles/untitled.dir/Item.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/Item.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Item.cpp" > CMakeFiles/untitled.dir/Item.cpp.i
+
+CMakeFiles/untitled.dir/Item.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/Item.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Item.cpp" -o CMakeFiles/untitled.dir/Item.cpp.s
 
 # Object files for target untitled
 untitled_OBJECTS = \
 "CMakeFiles/untitled.dir/main.cpp.o" \
 "CMakeFiles/untitled.dir/Raccoon.cpp.o" \
-"CMakeFiles/untitled.dir/RaccoonMethods.cpp.o"
+"CMakeFiles/untitled.dir/RaccoonMethods.cpp.o" \
+"CMakeFiles/untitled.dir/ProgramMethods.cpp.o" \
+"CMakeFiles/untitled.dir/Item.cpp.o"
 
 # External object files for target untitled
 untitled_EXTERNAL_OBJECTS =
@@ -108,9 +136,11 @@ untitled_EXTERNAL_OBJECTS =
 untitled.exe: CMakeFiles/untitled.dir/main.cpp.o
 untitled.exe: CMakeFiles/untitled.dir/Raccoon.cpp.o
 untitled.exe: CMakeFiles/untitled.dir/RaccoonMethods.cpp.o
+untitled.exe: CMakeFiles/untitled.dir/ProgramMethods.cpp.o
+untitled.exe: CMakeFiles/untitled.dir/Item.cpp.o
 untitled.exe: CMakeFiles/untitled.dir/build.make
 untitled.exe: CMakeFiles/untitled.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/cygdrive/c/Users/Danielle D/CLionProjects/untitled/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable untitled.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable untitled.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/untitled.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -123,6 +153,6 @@ CMakeFiles/untitled.dir/clean:
 .PHONY : CMakeFiles/untitled.dir/clean
 
 CMakeFiles/untitled.dir/depend:
-	cd "/cygdrive/c/Users/Danielle D/CLionProjects/untitled/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/cygdrive/c/Users/Danielle D/CLionProjects/untitled" "/cygdrive/c/Users/Danielle D/CLionProjects/untitled" "/cygdrive/c/Users/Danielle D/CLionProjects/untitled/cmake-build-debug" "/cygdrive/c/Users/Danielle D/CLionProjects/untitled/cmake-build-debug" "/cygdrive/c/Users/Danielle D/CLionProjects/untitled/cmake-build-debug/CMakeFiles/untitled.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator" "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator" "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug" "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug" "/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug/CMakeFiles/untitled.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/untitled.dir/depend
 
