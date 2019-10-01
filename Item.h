@@ -17,14 +17,8 @@ public:
     std::string nameOfItem, description;
 
     //constructors
-    Item();
-    Item(int itemType, int statValue, int numUses, std::string name, std::string itemDescription); //for testing purposes only
+    Item(); //for testing purposes only
+    Item(int itemType, int statValue, int numUses, std::string name, std::string itemDescription);
 };
-
-void inspectItem(Item selected);
-void useItem(Item selected);
-void giveStarterItems(Raccoon* startPet);
-
-
 
 #endif

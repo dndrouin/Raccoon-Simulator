@@ -4,7 +4,6 @@
 
 #include "Raccoon.h"
 #include "Item.h"
-#include <stdlib.h>
 #include <string>
 #include <iostream>
 
@@ -170,5 +169,60 @@ void Raccoon::listItems(int type){
 }
 
 
+//useItem method which uses an item and subtracts a use off of it, if there are zero uses left it deletes the item using deconstructor
+void Raccoon::useItem(Item& selected){
+    bool validResponse = false;
+    std::string response;
+    if(selected.typeOfItem == 0){
+        //item must be cosmetic. ask user if they would like to equip it to their raccoon
+    }
+    if(selected.typeOfItem == 1){
+        //item must be food. ask user if they would like to feed it to their raccoon
+        while(!validResponse) {
+            std::cout << "\nWould you like to feed this " << selected.nameOfItem << " to " << this->name << "? Y/N";
+            std::cin >> response;
+            //user must give either Y or N as response otherwise it will keep asking them for one, Y or N turns validResponse true so they can exit the loop
+            if (response.compare("Y") == 0) {
+                //item is fed to the raccoon, if item has multiple uses, uses decrease. if uses hits 0, deconstructor is called and item is deleted
+                if (selected.uses > 1) {
+                    selected.uses--;
+                    //adjusts hunger based on the change in stats stored in the item
+                    this->adjustHunger(selected.changeInStats, true);
+                } else {
+                    //adjusts hunger based on the change in stats stored in the item
+                    this->adjustHunger(selected.changeInStats, true);
+                    std::cout << "Your raccoon greedily consumes the food you've given him, raising his hunger stat by " << selected.changeInStats << "!";
+                    //item deconstructor called because item has no uses left
+                    //TODO: call deconstructor and delete item if it runs out of uses, maybe run trashItem instead?
+                }
+                //raccoon has been fed today, so bool fedToday turns to true and prevents user from feeding pet again for today only
+                this->fedToday = true;
+                //TODO: delete cout below and instead call method here that chooses raccoon's reaction to certain food item based on what preset was chosen by the user when the raccoon was adopted
+                validResponse = true;
+            } else if (response.compare("N") == 0) {
+                //do nothing? test out what happens first
+                std::cout << "\nReturning to inventory.\n";
+                validResponse = true;
+            }
+        }
+
+    }
+    if(selected.typeOfItem == 2){
+        //item must be a toy. ask user if they would like to use it to play with their raccoon
+    }
+    if(selected.typeOfItem == 3){
+        //item must be for care. ask user if they would like to use it to care for their raccoon.
+    }
+}
+
+void Raccoon::inspectItem(Item selected){
+//shows item name, description, and gives user the option to use the item or return to the item list
+//TODO: this method
+}
+
+void Raccoon::trashItem(Item& selected){
+    //deletes item from inventory, uses deconstructor and completely deletes it from memory
+    //TODO: this method
+}
 
 

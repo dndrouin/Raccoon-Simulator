@@ -10,9 +10,13 @@
 #include "Raccoon.h"
 
 
-class ProgramMethods {};
+class ProgramMethods{};
 
 void saveGame(Raccoon* pet);
+
+void giveStarterItems(Raccoon* startPet);
+
+void populateStore();
 
 
 #endif
