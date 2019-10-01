@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Danielle D/CLionProjects/untitled/Raccoon.h
+string
+-
+
+/cygdrive/c/Users/Danielle D/CLionProjects/untitled/RaccoonMethods.cpp
+stdlib.h
+-
+iostream
+-
+RaccoonMethods.h
+/cygdrive/c/Users/Danielle D/CLionProjects/untitled/RaccoonMethods.h
+Raccoon.h
+/cygdrive/c/Users/Danielle D/CLionProjects/untitled/Raccoon.h
+
+/cygdrive/c/Users/Danielle D/CLionProjects/untitled/RaccoonMethods.h
+
+/cygdrive/c/Users/Danielle D/CLionProjects/untitled/main.cpp
+iostream
+-
+fstream
+-
+sstream
+-
+Raccoon.h
+/cygdrive/c/Users/Danielle D/CLionProjects/untitled/Raccoon.h
+RaccoonMethods.cpp
+/cygdrive/c/Users/Danielle D/CLionProjects/untitled/RaccoonMethods.cpp
+
