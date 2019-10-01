@@ -3,10 +3,10 @@
 //
 
 #include "Raccoon.h"
+#include "Item.h"
 #include <stdlib.h>
 #include <string>
 #include <iostream>
-#include <vector>
 
 //raccoon constructors
 

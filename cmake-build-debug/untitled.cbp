@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug"/>
+				<Option working_dir="/cygdrive/c/Projects/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug"/>
+				<Option working_dir="/cygdrive/c/Projects/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="untitled">
-				<Option output="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug/untitled.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug"/>
+				<Option output="/cygdrive/c/Projects/cmake-build-debug/untitled.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Projects/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -42,15 +42,15 @@
 					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled"/>
+					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="untitled/fast">
-				<Option output="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug/untitled.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug"/>
+				<Option output="/cygdrive/c/Projects/cmake-build-debug/untitled.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Projects/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -63,51 +63,51 @@
 					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled/fast"/>
+					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/cmake-build-debug"/>
+				<Option working_dir="/cygdrive/c/Projects/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Danielle\ D/CLionProjects/Raccoon-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Projects/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Item.cpp">
+		<Unit filename="/cygdrive/c/Projects/Item.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Item.h">
+		<Unit filename="/cygdrive/c/Projects/Item.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/ProgramMethods.cpp">
+		<Unit filename="/cygdrive/c/Projects/ProgramMethods.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/ProgramMethods.h">
+		<Unit filename="/cygdrive/c/Projects/ProgramMethods.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Raccoon.cpp">
+		<Unit filename="/cygdrive/c/Projects/Raccoon.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Raccoon.h">
+		<Unit filename="/cygdrive/c/Projects/Raccoon.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/RaccoonMethods.cpp">
+		<Unit filename="/cygdrive/c/Projects/RaccoonMethods.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/RaccoonMethods.h">
+		<Unit filename="/cygdrive/c/Projects/RaccoonMethods.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/main.cpp">
+		<Unit filename="/cygdrive/c/Projects/main.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/CMakeLists.txt">
+		<Unit filename="/cygdrive/c/Projects/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

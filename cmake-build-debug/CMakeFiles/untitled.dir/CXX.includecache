@@ -6,23 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Item.cpp
+/cygdrive/c/Projects/Item.cpp
 Item.h
-/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Item.h
+/cygdrive/c/Projects/Item.h
 Raccoon.h
-/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Raccoon.h
+/cygdrive/c/Projects/Raccoon.h
 iostream
 -
 
-/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Item.h
+/cygdrive/c/Projects/Item.h
 string
 -
+Raccoon.h
+/cygdrive/c/Projects/Raccoon.h
 
-/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Raccoon.h
+/cygdrive/c/Projects/Raccoon.h
 string
 -
 vector
 -
 Item.h
-/cygdrive/c/Users/Danielle D/CLionProjects/Raccoon-Simulator/Item.h
+/cygdrive/c/Projects/Item.h
 
