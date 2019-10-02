@@ -7,7 +7,6 @@
 #define ITEM_H
 
 #include <string>
-#include "Raccoon.h"
 
 
 class Item {

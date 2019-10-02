@@ -78,14 +78,9 @@ int main() {
         pet->name = userEntry;
 
         //give user some items to start with in their inventory
-        //TODO: Remove this!!! replace with actual method that puts some default items in instead
-        Item newItem;
-        pet->addItem(newItem);
-        newItem.nameOfItem = "Pizza";
-        newItem.changeInStats = 50;
-        pet->addItem(newItem);
+        giveStarterItems(pet);
 
-
+        //save game
         cout<<"\nRaccoon adopted successfully.\n";
         saveGame(pet);
         cout <<"Autosaved!\n\n";

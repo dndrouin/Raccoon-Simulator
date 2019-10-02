@@ -4,7 +4,6 @@
 
 #include <string>
 #include "Item.h"
-#include "Raccoon.h"
 
 //default item constructor, shouldn't ever be actually used, just to test item creation and inventory
 Item::Item(){

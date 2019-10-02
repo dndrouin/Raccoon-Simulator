@@ -16,11 +16,37 @@ void saveGame(Raccoon* pet){
 
 
 void giveStarterItems(Raccoon* startPet){
-    //when game first begins, give user 1 granny smith apple, 1 cup of black coffee, 2 bowls of cat food
-    //also give 1 brush with 5 uses
-    //also give a big red ball with 10 uses
-    Item temp = new Item();
-    //TODO: why doesn't this work?
+    //when game first begins, give them some items to start out with
+    //create temporary item to contain the new items
+    Item temp;
+    startPet->addItem(temp);
+    // change temp to be cup of black coffee
+    temp.nameOfItem = "Cup of Black Coffee";
+    temp.changeInStats = 5;
+    temp.description = "A cup of extremely bitter black coffee. Probably not good for Raccoons.";
+    startPet->addItem(temp);
+    //change temp to be bowl of cat food
+    temp.nameOfItem = "Bowl of Cat Food";
+    temp.changeInStats = 25;
+    temp.description = "Smells like it might be chicken flavored.";\
+    //add to inventory twice
+    startPet->addItem(temp);
+    startPet->addItem(temp);
+    //change temp to be red brush
+    temp.nameOfItem = "Red Brush";
+    temp.description = "Made of plastic and full of old Raccoon hair.";
+    temp.typeOfItem = 3;
+    temp.uses = 5;
+    startPet->addItem(temp);
+    temp.nameOfItem = "Rainbow Bouncy Ball";
+    temp.description = "So many colors! So bouncy!";
+    temp.typeOfItem = 2;
+    temp.uses = 10;
+    startPet->addItem(temp);
+
+
+
+
 }
 
 void populateStore(){
