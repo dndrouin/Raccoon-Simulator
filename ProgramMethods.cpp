@@ -12,6 +12,7 @@ void saveGame(Raccoon* pet){
     saveFile.open("save.txt", std::ios_base::out);
     saveFile << pet->preset << "#"<< pet->name << "#" << pet->hunger << "#" << pet->fun << "#" << pet->care << "#" << pet->hyper << "#" << pet->smelly << "#" << pet->dead << "#" << pet->age << "#";
     saveFile.close();
+    //TODO: save inventory as well
 };
 
 
@@ -19,6 +20,7 @@ void giveStarterItems(Raccoon* startPet){
     //when game first begins, give them some items to start out with
     //create temporary item to contain the new items
     Item temp;
+    //temp is a granny smith apple by default, add it to their inventory
     startPet->addItem(temp);
     // change temp to be cup of black coffee
     temp.nameOfItem = "Cup of Black Coffee";
@@ -51,5 +53,6 @@ void giveStarterItems(Raccoon* startPet){
 
 void populateStore(){
     //when game first begins, generates items for the store to sell
+    //TODO: this method
 
 }

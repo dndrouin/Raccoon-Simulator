@@ -5,7 +5,7 @@
 #include <string>
 #include "Item.h"
 
-//default item constructor, shouldn't ever be actually used, just to test item creation and inventory
+//default item constructor
 Item::Item(){
     equipped = false;
     typeOfItem = 1;
@@ -15,15 +15,6 @@ Item::Item(){
     description = "A large, bright green, tart apple, perfect for baking a pie with.";
 }
 
-//more specific item constructor for use in game
-Item::Item(int itemType, int statValue, int numUses, std::string name, std::string itemDescription){
-    equipped = false;
-    changeInStats = statValue;
-    typeOfItem = itemType;
-    nameOfItem = name;
-    uses = numUses;
-    description = itemDescription;
-}
 
 
 

@@ -27,7 +27,7 @@ public:
     void addItem(Item currentItem);
     void useItem(Item& selected);
     void listItems(int type);
-    void inspectItem(Item selected);
+    void inspectItem(Item& selected);
     void trashItem(Item& selected);
 
     //raccoon constructor and methods

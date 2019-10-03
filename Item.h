@@ -15,9 +15,8 @@ public:
     int typeOfItem, changeInStats, uses;
     std::string nameOfItem, description;
 
-    //constructors
-    Item(); //for testing purposes only
-    Item(int itemType, int statValue, int numUses, std::string name, std::string itemDescription);
+    //default constructor
+    Item();
 };
 
 #endif
