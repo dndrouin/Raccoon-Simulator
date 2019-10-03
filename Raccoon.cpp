@@ -118,7 +118,7 @@ void Raccoon::listItems(int type){
     std::string userEntry;
     if(type == 0) {
         //list all cosmetic items (that aren't equipped)
-        if(closet.size() == 0){
+        if(closet.empty()){
             //if there's none, inform the user
             std::cout << "No items found.\n\n";
         }
@@ -131,7 +131,7 @@ void Raccoon::listItems(int type){
     }
     if(type == 1) {
         //list all food items
-        if(food.size() == 0){
+        if(food.empty()){
             //if there's none, inform the user
             std::cout << "No items found.\n\n";
         }
@@ -145,16 +145,16 @@ void Raccoon::listItems(int type){
                 }
             }
 
-                //ask the user if they would like to inspect an item or type back to go back to the menu
+                //ask the user if they would like to inspect an item or go back to menu
                 //validEntry will not change until they enter a number (limited by the number of items in the inventory)
                 while(!validEntry) {
                     std::cout << "Enter the number of an item to inspect it, or enter the last number to go back.  ";
                     std::cin >> userEntry;
-                    if(stoi(userEntry) > 0 && stoi(userEntry) < food.size()){
-                        inspectItem(food[stoi(userEntry)-1]);
+                    int userEntryInt = stoi(userEntry);
+                    if(userEntryInt > 0 && userEntryInt < food.size()){
+                        inspectItem(food[userEntryInt-1]);
                     }
-                    else if(stoi(userEntry) == food.size()){
-                        //TODO: this doesn't work. fix it
+                    else if(userEntryInt-1 == food.size()){
                         validEntry = true;
                         //go back to the menu
                     }
@@ -164,7 +164,7 @@ void Raccoon::listItems(int type){
     }
     if(type == 2) {
         //list all care items
-        if(cares.size() == 0){
+        if(cares.empty()){
             //if there's none, inform the user
             std::cout << "No items found.\n\n";
         }
@@ -177,7 +177,7 @@ void Raccoon::listItems(int type){
     }
     if(type == 3) {
         //list all play items
-        if(play.size() == 0){
+        if(play.empty()){
             //if there's none, inform the user
             std::cout << "No items found.\n\n";
         }
@@ -190,6 +190,8 @@ void Raccoon::listItems(int type){
     }
 }
 
+
+//TODO: user is asked if they want to use item and ALSO asked if they want to "feed/care/equip" it. kinda awkward. get rid of one
 
 //useItem method which uses an item and subtracts a use off of it, if there are zero uses left it deletes the item using deconstructor
 void Raccoon::useItem(Item& selected) {
@@ -323,8 +325,32 @@ void Raccoon::useItem(Item& selected) {
     }
 }
 void Raccoon::inspectItem(Item selected){
-//shows item name, description, and gives user the option to use the item or return to the item list
-//TODO: this method
+    //shows item name, description, and gives user the option to use the item or return to the item list
+    bool validEntry = false;
+    std::string userEntry;
+
+    //present item information to user
+    std::cout << "\n\nInspect Item";
+    std::cout << "\nName: " << selected.nameOfItem;
+    std::cout << "\nDescription: " << selected.description;
+    std::cout << "\nChange stat value: " << selected.changeInStats;
+    std::cout << "\nUses left: " << selected.uses << "\n";
+
+    //until user enters Y or N, does not let them escape loop
+    if(!validEntry) {
+        std::cout << "Would you like to use this item? Y/N\n";
+        std::cin >> userEntry;
+        if(userEntry == "Y"){
+            //use item
+            useItem(selected);
+            validEntry = true;
+        }
+        else if(userEntry == "N"){
+            //do not use item and go back to menu
+            validEntry = true;
+        }
+    }
+
 }
 
 void Raccoon::trashItem(Item& selected){
