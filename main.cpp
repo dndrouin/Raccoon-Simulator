@@ -143,15 +143,16 @@ int main() {
     //while raccoon is alive and the user hasn't selected save and exit, keep running the program
     while(!pet->dead && !gameEnded){
         //show user the navigation menu and allow them to pick what to do
-        cout<<"Select an action:\n\t1. Stats \n\t2. Feed \n\t3. Play \n\t4. Care \n\t5. Store \n\t6. Advance to the next day\n\t7. Save & Exit\n\n";
+        cout<<"\nMAIN MENU\n\t1. Stats \n\t2. Feed \n\t3. Play \n\t4. Care \n\t5. Store \n\t6. Advance to the next day\n\t7. Save & Exit\n";
+        cout<<"Select an action:\n";
         cin >> userEntry;
         //try and catch to ensure only numbers are entered
         try {
             actionChosen = stoi(userEntry);
-        }
-        catch (const std::invalid_argument &e){
-            std::cout << "That isn't a number.\n";
-        }
+    }
+    catch (const std::invalid_argument &e){
+        std::cout << "That isn't a number.\n";
+    }
 
         //if user enters 1, show current raccoon stats
         if(actionChosen == 1){
@@ -184,6 +185,7 @@ int main() {
             //reset goBack and validEntry for reuse elsewhere
             goBack = false;
             validEntry = false;
+
             //newline to make everything a little more readable and spaced out
             cout << "\n";
         }
@@ -201,6 +203,7 @@ int main() {
         else if(actionChosen == 4){
             //care
             cout << "Care items in your inventory:\n";
+            //TODO: figure out why this lists the wrong items
             pet->listItems(3);
         }
         else if(actionChosen == 5){

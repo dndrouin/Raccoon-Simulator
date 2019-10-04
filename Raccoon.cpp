@@ -120,8 +120,6 @@ void Raccoon::listItems(int type) {
     std::string userEntry;
     int userEntryInt;
 
-    //TODO: also include trash under play (for smelly buff)
-
     if (type == 0) {
         //list all cosmetic items (that aren't equipped)
         if (closet.empty()) {
@@ -178,7 +176,53 @@ void Raccoon::listItems(int type) {
     }
 
     if(type == 2) {
+        //list all play items
+        if(play.empty()){
+            //if there's none, just print the trash and that's it
+            std::cout << "\t1. Garbage Can\n";
+            std::cout << "\t2. Back to the Menu\n";
+
+        }
+        else {
+            //otherwise, print their place in inventory and name
+            for (int i = 0; i < play.size(); i++) {
+                std::cout << "\t" << i + 1 << ". " << play[i].nameOfItem << "\n";
+                //if last item, print trash can and then option to go back as well
+
+                if (i == play.size() - 1) {
+                    std::cout << "\t" << i + 2 << ". Garbage Can\n";
+                    std::cout << "\t" << i + 3 << ". Back to the Menu\n";
+                }
+            }
+        }
+
+        //ask user what action they want to take
+        while (!validEntry) {
+            std::cout << "Enter the number of an item to inspect it, or enter the last number to go back.  ";
+            std::cin >> userEntry;
+
+            //try and catch to ensure only numbers are entered
+            try {
+                userEntryInt = stoi(userEntry);
+            }
+            catch (const std::invalid_argument &e){
+                std::cout << "That isn't a number.\n";
+            }
+            //TODO: fix the bounds of this so the garbage can doesn't screw it up
+            if (userEntryInt > 0 && userEntryInt < play.size()) {
+                inspectItem(play[userEntryInt - 1]);
+            } else if (userEntryInt - 1 == play.size()) {
+                //spacing to make everything less clumped together
+                std::cout << "\n";
+                validEntry = true;
+                //go back to the menu
+                //FIXME: this doesn't go back to the menu
+            }
+        }
+    }
+    if(type == 3) {
         //list all care items
+        //TODO: This
         if(cares.empty()){
             //if there's none, inform the user
             std::cout << "No items found.\n\n";
@@ -189,19 +233,7 @@ void Raccoon::listItems(int type) {
                 std::cout << "\t" << i+1 << ". " << cares[i].nameOfItem << "\n";
             }
         }
-    }
-    if(type == 3) {
-        //list all play items
-        if(play.empty()){
-            //if there's none, inform the user
-            std::cout << "No items found.\n\n";
-        }
-        else {
-            //otherwise, print their place in inventory and name
-            for (int i = 0; i < play.size(); i++) {
-                std::cout << "\t" << i+1 << ". " << play[i].nameOfItem << "\n";
-            }
-        }
+
     }
 }
 
@@ -336,6 +368,8 @@ void Raccoon::useItem(Item& selected) {
 void Raccoon::inspectItem(Item& selected){
     //shows item name, description, and gives user the option to use the item or return to the item list1
     std::string userEntry;
+    int userEntryInt=0;
+    bool validEntry = false;
 
     //present item information to user
     std::cout << "\n\nInspect Item";
@@ -346,10 +380,35 @@ void Raccoon::inspectItem(Item& selected){
 
     //ask user if they want to use item or delete item
     std::cout<< "\nOptions\n";
-    std::cout << "1. Use Item";
-    std::cout << "2. Delete item";
-    trashItem(selected);
-    useItem(selected);
+    std::cout << "1. Use Item\n";
+    std::cout << "2. Delete item\n";
+    std::cout << "3. Back to inventory\n";
+    std::cout << "Select an action: ";
+    std::cin >> userEntry;
+
+    //try and catch to ensure only numbers are entered
+    try {
+        userEntryInt = stoi(userEntry);
+    }
+    catch (const std::invalid_argument &e){
+        std::cout << "Invalid selection.\n";
+    }
+
+    //while loop forces user to pick an option
+    while(!validEntry){
+        if(userEntryInt == 1){
+            useItem(selected);
+            validEntry = true;
+            }
+        else if(userEntryInt == 2){
+            trashItem(selected);
+            validEntry = true;
+            }
+        else if(userEntryInt == 3){
+            validEntry = true;
+            }
+        }
+
 }
 
 void Raccoon::trashItem(Item& selected){
@@ -365,7 +424,7 @@ void Raccoon::trashItem(Item& selected){
         std::cout << "Are you sure you want to delete this " << target << "? This action is irreversible! Y/N \n";
         std::cin >> userEntry;
         if (userEntry.compare("Y") == 0) {
-            if (selected.typeOfItem == 0) {
+            if (selected.typeOfItem == 0) {/*
                 //cosmetic so must be stored in closet vector
                 //erase-remove idiom
                 this->closet.erase(std::remove(this->closet.begin(), this->closet.end(), target), this->closet.end());
@@ -385,11 +444,12 @@ void Raccoon::trashItem(Item& selected){
                 //erase-remove idiom
                 this->play.erase(std::remove(this->play.begin(), this->play.end(), target), this->play.end());
                 std::cout << "\nItem trashed!\n";
+            }*/
+                validEntry = true;
+            } else if (userEntry.compare("N") == 0) {
+                //just go back to menu
+                validEntry = true;
             }
-            validEntry = true;
-        } else if (userEntry.compare("N") == 0) {
-            //just go back to menu
-            validEntry = true;
         }
     }
 }
