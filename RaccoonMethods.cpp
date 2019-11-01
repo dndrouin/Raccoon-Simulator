@@ -10,6 +10,7 @@
 using namespace std;
 
 void statDecay(Raccoon* pet){
+
     //method called when user selects to advance to the next day
     //lower all stats by a random number between 40 and 5
     pet->adjustHunger((rand() % 35) + 5, false);
@@ -26,6 +27,7 @@ void statDecay(Raccoon* pet){
 }
 
 void raccoonTypesList(){
+
     //list the available options for raccoons to the user for them to pick
     cout <<"\nHere are the available raccoons:";
     cout <<"\nRaccoon 1:\n\tSex: Male\n\tAppearance: Fat and fluffy, like a giant raccoon-colored cotton ball\n\tPersonality: A lazy slob\n\tBonus: His hunger caps at 200 instead of 100.";
