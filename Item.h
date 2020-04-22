@@ -17,6 +17,7 @@ public:
 
     //default constructor
     Item();
+    friend bool Item::operator==(const Item&, const Item&);
 };
 
 #endif

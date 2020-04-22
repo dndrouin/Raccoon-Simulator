@@ -15,6 +15,12 @@ Item::Item(){
     description = "A large, bright green, tart apple, perfect for baking a pie with.";
 }
 
+bool operator==(const Item& lhs, const Item& rhs) {
+    return lhs.nameOfItem == rhs.nameOfItem;
+}
+
+
+
 
 
 

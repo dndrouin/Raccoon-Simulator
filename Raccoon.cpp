@@ -121,7 +121,7 @@ void Raccoon::addItem(Item currentItem){
 void Raccoon::listItems(int type) {
     bool validEntry = false;
     std::string userEntry;
-    int userEntryInt;
+    int userEntryInt = 0;
 
     if (type == 0) {
 
@@ -133,7 +133,7 @@ void Raccoon::listItems(int type) {
         } else {
 
             //otherwise, print their place in inventory and name
-            for (int i = 0; i < closet.size(); i++) {
+            for (size_t i = 0; i < closet.size(); i++) {
                 std::cout << "\t" << i + 1 << ". " << closet[i].nameOfItem << "\n";
             }
         }
@@ -148,7 +148,7 @@ void Raccoon::listItems(int type) {
         } else {
 
             //otherwise, print their place in inventory and name
-            for (int i = 0; i < food.size(); i++) {
+            for (size_t i = 0; i < food.size(); i++) {
                 std::cout << "\t" << i + 1 << ". " << food[i].nameOfItem << "\n";
 
                 //if last item, print the option to go back as well
@@ -170,10 +170,11 @@ void Raccoon::listItems(int type) {
                     userEntryInt = stoi(userEntry);
                 }
                 catch (const std::invalid_argument &e){
+                    (void)e;
                     std::cout << "That isn't a number.\n";
                 }
 
-                if (userEntryInt > 0 && userEntryInt < food.size()) {
+                if (userEntryInt > 0 && userEntryInt < (int)food.size()) {
                     inspectItem(food[userEntryInt - 1]);
                 } else if (userEntryInt - 1 == food.size()) {
                     //spacing to make everything less clumped together
@@ -199,7 +200,7 @@ void Raccoon::listItems(int type) {
         }
         else {
             //otherwise, print their place in inventory and name
-            for (int i = 0; i < play.size(); i++) {
+            for (size_t i = 0; i < play.size(); i++) {
                 std::cout << "\t" << i + 1 << ". " << play[i].nameOfItem << "\n";
                 //if last item, print trash can and then option to go back as well
 
@@ -220,10 +221,11 @@ void Raccoon::listItems(int type) {
                 userEntryInt = stoi(userEntry);
             }
             catch (const std::invalid_argument &e){
+                (void)e;
                 std::cout << "That isn't a number.\n";
             }
             //TODO: fix the bounds of this so the garbage can doesn't screw it up
-            if (userEntryInt > 0 && userEntryInt < play.size()) {
+            if (userEntryInt > 0 && userEntryInt < (int)play.size()) {
                 inspectItem(play[userEntryInt - 1]);
             } else if (userEntryInt - 1 == play.size()) {
                 //spacing to make everything less clumped together
@@ -243,7 +245,7 @@ void Raccoon::listItems(int type) {
         }
         else {
             //otherwise, print their place in inventory and name
-            for (int i = 0; i < cares.size(); i++) {
+            for (size_t i = 0; i < cares.size(); i++) {
                 std::cout << "\t" << i+1 << ". " << cares[i].nameOfItem << "\n";
             }
         }
@@ -432,6 +434,7 @@ void Raccoon::inspectItem(Item& selected){
         userEntryInt = stoi(userEntry);
     }
     catch (const std::invalid_argument &e){
+        (void)e;
         std::cout << "Invalid selection.\n";
     }
 
@@ -455,35 +458,35 @@ void Raccoon::inspectItem(Item& selected){
 void Raccoon::trashItem(Item& selected){
     std::string target = selected.nameOfItem;
     std::string userEntry;
-    bool validEntry;
+    bool validEntry = false;
     //deletes item from inventory
 
     //FIXME: this doesn't even compile, completely redo it
 
     //requires either Y or N confirmation that user wants to delete item
     while(!validEntry) {
-        /*std::cout << "Are you sure you want to delete this " << target << "? This action is irreversible! Y/N \n";
+        std::cout << "Are you sure you want to delete this " << target << "? This action is irreversible! Y/N \n";
         std::cin >> userEntry;
         if (userEntry.compare("Y") == 0) {
             if (selected.typeOfItem == 0) {
                 //cosmetic so must be stored in closet vector
                 //erase-remove idiom
-                this->closet.erase(std::remove(this->closet.begin(), this->closet.end(), target), this->closet.end());
+                this->closet.erase(std::remove(this->closet.begin(), this->closet.end(), selected), this->closet.end());
                 std::cout << "\nItem trashed!\n";
             } else if (selected.typeOfItem == 1) {
                 //food so must be stored in food vector
                 //erase-remove idiom
-                this->food.erase(std::remove(this->food.begin(), this->food.end(), target), this->food.end());
+                this->food.erase(std::remove(this->food.begin(), this->food.end(), selected), this->food.end());
                 std::cout << "\nItem trashed!\n";
             } else if (selected.typeOfItem == 2) {
                 //care item so must be stored in care vector
                 //erase-remove idiom
-                this->cares.erase(std::remove(this->cares.begin(), this->cares.end(), target), this->cares.end());
+                this->cares.erase(std::remove(this->cares.begin(), this->cares.end(), selected), this->cares.end());
                 std::cout << "\nItem trashed!\n";
             } else if (selected.typeOfItem == 3) {
                 //toy so must be stored in fun vector
                 //erase-remove idiom
-                this->play.erase(std::remove(this->play.begin(), this->play.end(), target), this->play.end());
+                this->play.erase(std::remove(this->play.begin(), this->play.end(), selected), this->play.end());
                 std::cout << "\nItem trashed!\n";
             }
 
@@ -491,10 +494,7 @@ void Raccoon::trashItem(Item& selected){
             } else if (userEntry.compare("N") == 0) {
                 //just go back to menu
                 validEntry = true;
-            }*/
-
-            std::cout << "This feature is not yet implemented. Returning to menu.";
-            validEntry = true;
+            }
     }
 }
 

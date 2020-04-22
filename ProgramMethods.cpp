@@ -36,8 +36,7 @@ void giveStarterItems(Raccoon* startPet){
     temp.changeInStats = 25;
     temp.description = "Smells like it might be chicken flavored.";
 
-    //add to inventory twice
-    startPet->addItem(temp);
+    //add to inventory
     startPet->addItem(temp);
 
     //change temp to be red brush
@@ -46,6 +45,7 @@ void giveStarterItems(Raccoon* startPet){
     temp.typeOfItem = 3;
     temp.uses = 5;
     startPet->addItem(temp);
+
     //and change temp to rainbow bouncy ball
     temp.nameOfItem = "Rainbow Bouncy Ball";
     temp.description = "So many colors! So bouncy!";
