@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/cygdrive/c/Projects/Item.cpp" "/cygdrive/c/Projects/cmake-build-debug/CMakeFiles/untitled.dir/Item.cpp.o"
-  "/cygdrive/c/Projects/ProgramMethods.cpp" "/cygdrive/c/Projects/cmake-build-debug/CMakeFiles/untitled.dir/ProgramMethods.cpp.o"
-  "/cygdrive/c/Projects/Raccoon.cpp" "/cygdrive/c/Projects/cmake-build-debug/CMakeFiles/untitled.dir/Raccoon.cpp.o"
-  "/cygdrive/c/Projects/RaccoonMethods.cpp" "/cygdrive/c/Projects/cmake-build-debug/CMakeFiles/untitled.dir/RaccoonMethods.cpp.o"
-  "/cygdrive/c/Projects/main.cpp" "/cygdrive/c/Projects/cmake-build-debug/CMakeFiles/untitled.dir/main.cpp.o"
+  "C:/Users/dndro/CLionProjects/Raccoon-Simulator/Item.cpp" "C:/Users/dndro/CLionProjects/Raccoon-Simulator/cmake-build-debug/CMakeFiles/untitled.dir/Item.cpp.obj"
+  "C:/Users/dndro/CLionProjects/Raccoon-Simulator/ProgramMethods.cpp" "C:/Users/dndro/CLionProjects/Raccoon-Simulator/cmake-build-debug/CMakeFiles/untitled.dir/ProgramMethods.cpp.obj"
+  "C:/Users/dndro/CLionProjects/Raccoon-Simulator/Raccoon.cpp" "C:/Users/dndro/CLionProjects/Raccoon-Simulator/cmake-build-debug/CMakeFiles/untitled.dir/Raccoon.cpp.obj"
+  "C:/Users/dndro/CLionProjects/Raccoon-Simulator/RaccoonMethods.cpp" "C:/Users/dndro/CLionProjects/Raccoon-Simulator/cmake-build-debug/CMakeFiles/untitled.dir/RaccoonMethods.cpp.obj"
+  "C:/Users/dndro/CLionProjects/Raccoon-Simulator/main.cpp" "C:/Users/dndro/CLionProjects/Raccoon-Simulator/cmake-build-debug/CMakeFiles/untitled.dir/main.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

@@ -1,11 +1,12 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/untitled.dir/Item.cpp.o"
-  "CMakeFiles/untitled.dir/ProgramMethods.cpp.o"
-  "CMakeFiles/untitled.dir/Raccoon.cpp.o"
-  "CMakeFiles/untitled.dir/RaccoonMethods.cpp.o"
-  "CMakeFiles/untitled.dir/main.cpp.o"
-  "libuntitled.dll.a"
+  "CMakeFiles/untitled.dir/Item.cpp.obj"
+  "CMakeFiles/untitled.dir/ProgramMethods.cpp.obj"
+  "CMakeFiles/untitled.dir/Raccoon.cpp.obj"
+  "CMakeFiles/untitled.dir/RaccoonMethods.cpp.obj"
+  "CMakeFiles/untitled.dir/main.cpp.obj"
   "untitled.exe"
+  "untitled.exe.manifest"
+  "untitled.lib"
   "untitled.pdb"
 )
 

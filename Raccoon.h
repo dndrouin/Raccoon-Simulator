@@ -38,5 +38,6 @@ public:
     int checkIfDead();
 
 
+    void itemDeletion(Item &selected);
 };
 #endif

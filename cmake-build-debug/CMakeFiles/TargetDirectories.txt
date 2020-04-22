@@ -1,3 +1,3 @@
-/cygdrive/c/Projects/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/cygdrive/c/Projects/cmake-build-debug/CMakeFiles/untitled.dir
-/cygdrive/c/Projects/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/dndro/CLionProjects/Raccoon-Simulator/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/dndro/CLionProjects/Raccoon-Simulator/cmake-build-debug/CMakeFiles/untitled.dir
+C:/Users/dndro/CLionProjects/Raccoon-Simulator/cmake-build-debug/CMakeFiles/rebuild_cache.dir

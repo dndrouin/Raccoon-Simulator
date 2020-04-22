@@ -147,9 +147,11 @@ void Raccoon::listItems(int type) {
             std::cout << "No items found.\n\n";
         } else {
 
+            //FIXME: User typing in item number to select it doesn't select it - somehow off
+
             //otherwise, print their place in inventory and name
             for (size_t i = 0; i < food.size(); i++) {
-                std::cout << "\t" << i + 1 << ". " << food[i].nameOfItem << "\n";
+                std::cout << "\t" << i+1 << ". " << food[i].nameOfItem << "\n";
 
                 //if last item, print the option to go back as well
                 if (i == food.size() - 1) {
@@ -254,8 +256,8 @@ void Raccoon::listItems(int type) {
 }
 
 
-//useItem method which uses an item and subtracts a use off of it, if there are zero uses left it deletes the item using deconstructor
-//TODO: when item runs out of uses run trashItem (but trashItem is currently not finished)
+//useItem method which uses an item and subtracts a use off of it, if there are zero uses left it deletes it using itemDeletion
+
 void Raccoon::useItem(Item& selected) {
     bool validResponse = false;
     std::string response;
@@ -307,8 +309,8 @@ void Raccoon::useItem(Item& selected) {
                     this->adjustHunger(selected.changeInStats, true);
                     std::cout << "Your raccoon greedily consumes the food, raising his hunger stat by "
                               << selected.changeInStats << "!\n";
-                    //trashItem removes item from vector because no uses left
-                    //trashItem(selected);
+                    //itemDeletion removes item from vector because no uses left
+                    itemDeletion(selected);
                 }
 
                 //raccoon has been fed today, so bool fedToday turns to true and prevents user from feeding pet again for today only
@@ -347,8 +349,8 @@ void Raccoon::useItem(Item& selected) {
                     this->adjustFun(selected.changeInStats, true);
                     std::cout << "Your raccoon bats around the toy for a few minutes. His fun stat has increased by "
                               << selected.changeInStats << "!";
-                    //trashItem removes item from vector because no uses left
-                    //trashItem(selected);
+                    //itemDeletion removes item from vector because no uses left
+                    itemDeletion(selected);
                 }
 
                 //raccoon has been played with today, so bool playedToday turns to true and prevents user from playing with pet again for today only
@@ -389,8 +391,8 @@ void Raccoon::useItem(Item& selected) {
                     std::cout
                             << "Your raccoon fights it at first, but after a minute allows you to take care of him. His care stat has been increased by "
                             << selected.changeInStats << "!";
-                    //trashItem removes item from vector because no uses left
-                    //trashItem(selected);
+                    //itemDeletion removes item from vector because no uses left
+                    itemDeletion(selected);
                 }
 
                 //raccoon has been cared for today, so bool caredToday turns to true and prevents user from caring for pet again for today only
@@ -455,42 +457,42 @@ void Raccoon::inspectItem(Item& selected){
 
 }
 
+//deletes item from inventory
+void Raccoon::itemDeletion(Item& selected){
+    if (selected.typeOfItem == 0) {
+        //cosmetic so must be stored in closet vector
+        //erase-remove idiom
+        this->closet.erase(std::remove(this->closet.begin(), this->closet.end(), selected), this->closet.end());
+    } else if (selected.typeOfItem == 1) {
+        //food so must be stored in food vector
+        //erase-remove idiom
+        this->food.erase(std::remove(this->food.begin(), this->food.end(), selected), this->food.end());
+    } else if (selected.typeOfItem == 2) {
+        //care item so must be stored in care vector
+        //erase-remove idiom
+        this->cares.erase(std::remove(this->cares.begin(), this->cares.end(), selected), this->cares.end());
+    } else if (selected.typeOfItem == 3) {
+        //toy so must be stored in fun vector
+        //erase-remove idiom
+        this->play.erase(std::remove(this->play.begin(), this->play.end(), selected), this->play.end());
+    }
+}
+
+//prompts user before deleting item from inventory
 void Raccoon::trashItem(Item& selected){
     std::string target = selected.nameOfItem;
     std::string userEntry;
     bool validEntry = false;
-    //deletes item from inventory
 
-    //FIXME: this doesn't even compile, completely redo it
-
-    //requires either Y or N confirmation that user wants to delete item
+    //requires either Y or N confirmation that user wants to delete item, calls itemDeletion if Y
     while(!validEntry) {
         std::cout << "Are you sure you want to delete this " << target << "? This action is irreversible! Y/N \n";
         std::cin >> userEntry;
         if (userEntry.compare("Y") == 0) {
-            if (selected.typeOfItem == 0) {
-                //cosmetic so must be stored in closet vector
-                //erase-remove idiom
-                this->closet.erase(std::remove(this->closet.begin(), this->closet.end(), selected), this->closet.end());
-                std::cout << "\nItem trashed!\n";
-            } else if (selected.typeOfItem == 1) {
-                //food so must be stored in food vector
-                //erase-remove idiom
-                this->food.erase(std::remove(this->food.begin(), this->food.end(), selected), this->food.end());
-                std::cout << "\nItem trashed!\n";
-            } else if (selected.typeOfItem == 2) {
-                //care item so must be stored in care vector
-                //erase-remove idiom
-                this->cares.erase(std::remove(this->cares.begin(), this->cares.end(), selected), this->cares.end());
-                std::cout << "\nItem trashed!\n";
-            } else if (selected.typeOfItem == 3) {
-                //toy so must be stored in fun vector
-                //erase-remove idiom
-                this->play.erase(std::remove(this->play.begin(), this->play.end(), selected), this->play.end());
-                std::cout << "\nItem trashed!\n";
-            }
-
+                itemDeletion(selected);
+                std::cout << "Item successfully deleted.";
                 validEntry = true;
+
             } else if (userEntry.compare("N") == 0) {
                 //just go back to menu
                 validEntry = true;

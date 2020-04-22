@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Projects/Item.h
+C:/Users/dndro/CLionProjects/Raccoon-Simulator/Item.h
 string
 -
 
-/cygdrive/c/Projects/Raccoon.cpp
+C:/Users/dndro/CLionProjects/Raccoon-Simulator/Raccoon.cpp
 Raccoon.h
-/cygdrive/c/Projects/Raccoon.h
+C:/Users/dndro/CLionProjects/Raccoon-Simulator/Raccoon.h
 Item.h
-/cygdrive/c/Projects/Item.h
+C:/Users/dndro/CLionProjects/Raccoon-Simulator/Item.h
 string
 -
 iostream
@@ -22,11 +22,11 @@ iostream
 algorithm
 -
 
-/cygdrive/c/Projects/Raccoon.h
+C:/Users/dndro/CLionProjects/Raccoon-Simulator/Raccoon.h
 string
 -
 vector
 -
 Item.h
-/cygdrive/c/Projects/Item.h
+C:/Users/dndro/CLionProjects/Raccoon-Simulator/Item.h
 
