@@ -215,13 +215,12 @@ int main() {
         else if(actionChosen == 3){
             //play
             cout << "Toys in your inventory:\n";
-            pet->listItems(2);
+            pet->listItems(3);
         }
         else if(actionChosen == 4){
             //care
             cout << "Care items in your inventory:\n";
-            //TODO: figure out why this lists the wrong items
-            pet->listItems(3);
+            pet->listItems(2);
         }
         else if(actionChosen == 5){
             //store

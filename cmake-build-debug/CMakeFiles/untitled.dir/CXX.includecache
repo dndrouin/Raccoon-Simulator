@@ -10,23 +10,37 @@ C:/Users/dndro/CLionProjects/Raccoon-Simulator/Item.h
 string
 -
 
-C:/Users/dndro/CLionProjects/Raccoon-Simulator/Raccoon.cpp
+C:/Users/dndro/CLionProjects/Raccoon-Simulator/ProgramMethods.h
+fstream
+-
 Raccoon.h
 C:/Users/dndro/CLionProjects/Raccoon-Simulator/Raccoon.h
-Item.h
-C:/Users/dndro/CLionProjects/Raccoon-Simulator/Item.h
-string
--
-iostream
--
-algorithm
--
 
 C:/Users/dndro/CLionProjects/Raccoon-Simulator/Raccoon.h
 string
 -
 vector
 -
+Item.h
+C:/Users/dndro/CLionProjects/Raccoon-Simulator/Item.h
+
+C:/Users/dndro/CLionProjects/Raccoon-Simulator/RaccoonMethods.h
+Raccoon.h
+C:/Users/dndro/CLionProjects/Raccoon-Simulator/Raccoon.h
+
+C:/Users/dndro/CLionProjects/Raccoon-Simulator/main.cpp
+iostream
+-
+sstream
+-
+limits
+-
+Raccoon.h
+C:/Users/dndro/CLionProjects/Raccoon-Simulator/Raccoon.h
+RaccoonMethods.h
+C:/Users/dndro/CLionProjects/Raccoon-Simulator/RaccoonMethods.h
+ProgramMethods.h
+C:/Users/dndro/CLionProjects/Raccoon-Simulator/ProgramMethods.h
 Item.h
 C:/Users/dndro/CLionProjects/Raccoon-Simulator/Item.h
 
