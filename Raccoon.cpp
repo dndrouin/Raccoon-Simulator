@@ -107,12 +107,12 @@ void Raccoon::addItem(Item currentItem){
             this->food.push_back(currentItem);
         }
         if(currentItem.typeOfItem == 2){
-            //item must be care item, therefore is added to care inventory
-            this->cares.push_back(currentItem);
+            //item must be toy item, therefore is added to care inventory
+            this->play.push_back(currentItem);
         }
         if(currentItem.typeOfItem == 3) {
-            //item must be toy, therefore is added to the play inventory
-            this->play.push_back(currentItem);
+            //item must be care item, therefore is added to the play inventory
+            this->cares.push_back(currentItem);
         }
     }
 
@@ -227,9 +227,9 @@ void Raccoon::listItems(int type) {
                 std::cout << "That isn't a number.\n";
             }
             //TODO: fix the bounds of this so the garbage can doesn't screw it up
-            if (userEntryInt > 0 && userEntryInt < (int)play.size()) {
+            if (userEntryInt > 0 && userEntryInt <= (int)play.size()+2) {
                 inspectItem(play[userEntryInt - 1]);
-            } else if (userEntryInt - 1 == play.size()) {
+            } else if (userEntryInt == play.size()+2) {
                 //spacing to make everything less clumped together
                 std::cout << "\n";
                 validEntry = true;
@@ -249,6 +249,50 @@ void Raccoon::listItems(int type) {
             //otherwise, print their place in inventory and name
             for (size_t i = 0; i < cares.size(); i++) {
                 std::cout << "\t" << i+1 << ". " << cares[i].nameOfItem << "\n";
+
+                //if last item, print the option to go back as well
+                if (i == cares.size() - 1) {
+                    std::cout << "\t" << i + 2 << ". Back to the Menu\n";
+                }
+            }
+
+        }
+
+        //ask the user if they would like to inspect an item or go back to menu
+        //validEntry will not change until they enter a number (limited by the number of items in the inventory)
+
+        while (!validEntry) {
+            std::cout << "Enter the number of an item to inspect it, or enter the last number to go back.  ";
+            std::cin >> userEntry;
+
+            //try and catch to ensure only numbers are entered
+
+            try {
+                userEntryInt = stoi(userEntry);
+            }
+            catch (const std::invalid_argument &e){
+                (void)e;
+                std::cout << "That isn't a number.\n";
+            }
+
+            if (userEntryInt > 0 && userEntryInt <= (int)cares.size()) {
+                //item is being inspected
+                inspectItem(cares[userEntryInt - 1]);
+
+                //after user has done something with item, return to menu
+                std::cout << "\n";
+                std::cout << "This would be going back to the menu if it was working.";
+                validEntry = true;
+
+            } else if (userEntryInt - 1 == cares.size()) {
+                //spacing to make everything less clumped together
+
+                std::cout << "\n";
+                std::cout << "This would be going back to the menu if it was working.";
+                validEntry = true;
+
+                //go back to the menu
+                //FIXME: this doesn't go back to the menu
             }
         }
 
@@ -375,8 +419,8 @@ void Raccoon::useItem(Item& selected) {
             //user must give either Y or N as response otherwise it will keep asking them for one, Y or N turns validResponse true so they can exit the loop
             if (response.compare("Y") == 0) {
 
-                //item is used to care for the raccoon, if item has multiple uses, uses decrease. if uses hits 0, deconstructor is called and item is deleted
-                if (selected.uses > 1) {
+                //item is used to care for the raccoon, if item has multiple uses, uses decrease. if uses hits 0, item is deleted
+                if (selected.uses >= 1) {
                     selected.uses--;
 
                     //adjusts care based on the change in stats stored in the item
@@ -384,19 +428,17 @@ void Raccoon::useItem(Item& selected) {
                     std::cout
                             << "Your raccoon fights it at first, but after a minute allows you to take care of him. His care stat has been increased by "
                             << selected.changeInStats << "!";
-                } else {
-
-                    //adjusts care based on the change in stats stored in the item
-                    this->adjustCare(selected.changeInStats, true);
-                    std::cout
-                            << "Your raccoon fights it at first, but after a minute allows you to take care of him. His care stat has been increased by "
-                            << selected.changeInStats << "!";
-                    //itemDeletion removes item from vector because no uses left
-                    itemDeletion(selected);
+                    if(selected.uses == 0) {
+                        std::cout << " Unfortunately, the " << selected.nameOfItem << "has broken and is no longer usable.";
+                        //itemDeletion removes item from vector because no uses left
+                        itemDeletion(selected);
+                    }
                 }
 
+                //FIXME: this isn't stopping user from doing multiple things in a day
                 //raccoon has been cared for today, so bool caredToday turns to true and prevents user from caring for pet again for today only
                 this->caredToday = true;
+                std::cout << "\nReturning to inventory.\n";
                 validResponse = true;
             } else if (response.compare("N") == 0) {
 

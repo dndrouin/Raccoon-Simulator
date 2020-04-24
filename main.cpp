@@ -28,10 +28,11 @@ int main() {
     cout<<"R A C C O O N  S I M U L A T O R\nby Danielle Drouin (github.com/dndrouin)\n\n";
 
     //validEntry will only become true if the user has provided either 1 or 2. anything else will prompt the user again to select an action
+    //Also secret quick raccoon option that creates a raccoon with default things chosen to make my life easier while i test this program
     while(!validEntry) {
         cout << "MAIN MENU\n1. New Raccoon\n2. Load Last Raccoon\nWhat action would you like to take? Enter it here: ";
         cin >> userEntry;
-        if(userEntry.compare("1") == 0 || userEntry.compare("2") == 0){
+        if(userEntry.compare("1") == 0 || userEntry.compare("2") == 0 || userEntry.compare("99") == 0){
             actionChosen = stoi(userEntry);
             validEntry = true;
         }
@@ -150,6 +151,13 @@ int main() {
             gameEnded = true;
         }
     }
+    else if(actionChosen == 99){
+        //create a raccoon with defaults chosen for easier testing
+        pet->preset = 1;
+        pet->name = "Meeko";
+        giveStarterItems(pet);
+        std::cout << "Default raccoon created.";
+    }
 
     //while raccoon is alive and the user hasn't selected save and exit, keep running the program
     while(!pet->dead && !gameEnded){
@@ -215,12 +223,12 @@ int main() {
         else if(actionChosen == 3){
             //play
             cout << "Toys in your inventory:\n";
-            pet->listItems(3);
+            pet->listItems(2);
         }
         else if(actionChosen == 4){
             //care
             cout << "Care items in your inventory:\n";
-            pet->listItems(2);
+            pet->listItems(3);
         }
         else if(actionChosen == 5){
             //store
