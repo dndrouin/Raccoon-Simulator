@@ -175,6 +175,8 @@ int main() {
             std::cout << "That isn't a number.\n";
         }
 
+        //TODO: When an item is inspected and you choose the "Back to inventory" option, it asks you what item you want to use but doesn't list them all again. Fix that.
+
         //if user enters 1, show current raccoon stats
         if(actionChosen == 1){
 

@@ -321,111 +321,126 @@ void Raccoon::useItem(Item& selected) {
         }
     if (selected.typeOfItem == 1) {
 
-        //item must be food. ask user if they would like to feed it to their raccoon
-        while (!validResponse) {
-            std::cout << "\nWould you like to feed this " << selected.nameOfItem << " to " << this->name << "? Y/N\n";
-            std::cin >> response;
+        if (!this->fedToday) {
+            //item must be food. ask user if they would like to feed it to their raccoon
+            while (!validResponse) {
+                std::cout << "\nWould you like to feed this " << selected.nameOfItem << " to " << this->name
+                          << "? Y/N\n";
+                std::cin >> response;
 
-            //user must give either Y or N as response otherwise it will keep asking them for one, Y or N turns validResponse true so they can exit the loop
-            if (response.compare("Y") == 0) {
+                //user must give either Y or N as response otherwise it will keep asking them for one, Y or N turns validResponse true so they can exit the loop
+                if (response.compare("Y") == 0) {
 
-                //item is fed to the raccoon, if item has multiple uses, uses decrease. if uses hits 0, deconstructor is called and item is deleted
-                if (selected.uses > 1) {
-                    selected.uses--;
+                    //item is fed to the raccoon, if item has multiple uses, uses decrease. if uses hits 0, deconstructor is called and item is deleted
+                    if (selected.uses > 1) {
+                        selected.uses--;
 
-                    //adjusts hunger based on the change in stats stored in the item
-                    this->adjustHunger(selected.changeInStats, true);
-                    std::cout << "Your raccoon greedily consumes the food, raising his hunger stat by "
-                              << selected.changeInStats << "!\n";
-                } else {
+                        //adjusts hunger based on the change in stats stored in the item
+                        this->adjustHunger(selected.changeInStats, true);
+                        std::cout << "Your raccoon greedily consumes the food, raising his hunger stat by "
+                                  << selected.changeInStats << "!\n";
+                    } else {
 
-                    //adjusts hunger based on the change in stats stored in the item
-                    this->adjustHunger(selected.changeInStats, true);
-                    std::cout << "Your raccoon greedily consumes the food, raising his hunger stat by "
-                              << selected.changeInStats << "!\n";
-                    //itemDeletion removes item from vector because no uses left
-                    itemDeletion(selected);
+                        //adjusts hunger based on the change in stats stored in the item
+                        this->adjustHunger(selected.changeInStats, true);
+                        std::cout << "Your raccoon greedily consumes the food, raising his hunger stat by "
+                                  << selected.changeInStats << "!\n";
+                        //itemDeletion removes item from vector because no uses left
+                        itemDeletion(selected);
+                    }
+
+                    //raccoon has been fed today, so bool fedToday turns to true and prevents user from feeding pet again for today only
+                    this->fedToday = true;
+                    validResponse = true;
+                } else if (response.compare("N") == 0) {
+
+                    //do nothing? test out what happens first
+                    std::cout << "\nReturning to inventory.\n";
+                    validResponse = true;
                 }
+            }
 
-                //raccoon has been fed today, so bool fedToday turns to true and prevents user from feeding pet again for today only
-                this->fedToday = true;
-                validResponse = true;
-            } else if (response.compare("N") == 0) {
-
-                //do nothing? test out what happens first
-                std::cout << "\nReturning to inventory.\n";
-                validResponse = true;
+        } else{
+                std::cout << "\nYou have already fed your raccoon today. Wait until tomorrow to do it again.\n";
+                std::cout << "Returning to main menu...";
             }
         }
-
-    }
     if (selected.typeOfItem == 2) {
 
-        //item must be a toy. ask user if they would like to use it to play with their raccoon
-        while (!validResponse) {
-            std::cout << "\nWould you like to use this " << selected.nameOfItem << " to play with " << this->name << "? Y/N\n";
-            std::cin >> response;
+        if (!this->playedToday) {
+            //item must be a toy. ask user if they would like to use it to play with their raccoon
+            while (!validResponse) {
+                std::cout << "\nWould you like to use this " << selected.nameOfItem << " to play with " << this->name
+                          << "? Y/N\n";
+                std::cin >> response;
 
-            //user must give either Y or N as response otherwise it will keep asking them for one, Y or N turns validResponse true so they can exit the loop
-            if (response.compare("Y") == 0) {
+                //user must give either Y or N as response otherwise it will keep asking them for one, Y or N turns validResponse true so they can exit the loop
+                if (response.compare("Y") == 0) {
 
-                //item is used to play with the raccoon, if item has multiple uses, uses decrease. if uses hits 0, deconstructor is called and item is deleted
-                if (selected.uses > 1) {
-                    selected.uses--;
+                    //item is used to play with the raccoon, if item has multiple uses, uses decrease. if uses hits 0, deconstructor is called and item is deleted
+                    if (selected.uses > 1) {
+                        selected.uses--;
 
-                    //adjusts fun based on the change in stats stored in the item
-                    this->adjustFun(selected.changeInStats, true);
-                    std::cout << "Your raccoon bats around the toy for a few minutes. His fun stat has increased by "
-                              << selected.changeInStats << "!";
-                } else {
+                        //adjusts fun based on the change in stats stored in the item
+                        this->adjustFun(selected.changeInStats, true);
+                        std::cout
+                                << "Your raccoon bats around the toy for a few minutes. His fun stat has increased by "
+                                << selected.changeInStats << "!";
+                    } else {
 
-                    //adjusts fun based on the change in stats stored in the item
-                    this->adjustFun(selected.changeInStats, true);
-                    std::cout << "Your raccoon bats around the toy for a few minutes. His fun stat has increased by "
-                              << selected.changeInStats << "!";
-                    //itemDeletion removes item from vector because no uses left
-                    itemDeletion(selected);
+                        //adjusts fun based on the change in stats stored in the item
+                        this->adjustFun(selected.changeInStats, true);
+                        std::cout
+                                << "Your raccoon bats around the toy for a few minutes. His fun stat has increased by "
+                                << selected.changeInStats << "!";
+                        //itemDeletion removes item from vector because no uses left
+                        itemDeletion(selected);
+                    }
+
+                    //raccoon has been played with today, so bool playedToday turns to true and prevents user from playing with pet again for today only
+                    this->playedToday = true;
+                    validResponse = true;
+                } else if (response.compare("N") == 0) {
+
+                    //do nothing? test out what happens first
+                    std::cout << "\nReturning to inventory.\n";
+                    validResponse = true;
                 }
-
-                //raccoon has been played with today, so bool playedToday turns to true and prevents user from playing with pet again for today only
-                this->playedToday = true;
-                validResponse = true;
-            } else if (response.compare("N") == 0) {
-
-                //do nothing? test out what happens first
-                std::cout << "\nReturning to inventory.\n";
-                validResponse = true;
             }
+        } else {
+            std::cout << "\nYou have already played with your raccoon today. Wait until tomorrow to do it again.\n";
+            std::cout << "Returning to main menu...";
         }
     }
     if (selected.typeOfItem == 3) {
 
         //item must be for care. ask user if they would like to use it to care for their raccoon.
-        while (!validResponse) {
-            std::cout << "\nWould you like to care for your Raccoon using this " << selected.nameOfItem
-                      << "? Y/N\n";
-            std::cin >> response;
+        if (!this->caredToday) {
+            while (!validResponse) {
+                std::cout << "\nWould you like to care for your Raccoon using this " << selected.nameOfItem
+                          << "? Y/N\n";
+                std::cin >> response;
 
-            //user must give either Y or N as response otherwise it will keep asking them for one, Y or N turns validResponse true so they can exit the loop
-            if (response.compare("Y") == 0) {
+                //user must give either Y or N as response otherwise it will keep asking them for one, Y or N turns validResponse true so they can exit the loop
+                if (response.compare("Y") == 0) {
 
-                //item is used to care for the raccoon, if item has multiple uses, uses decrease. if uses hits 0, item is deleted
-                if (selected.uses >= 1) {
-                    selected.uses--;
+                    //item is used to care for the raccoon, if item has multiple uses, uses decrease. if uses hits 0, item is deleted
+                    if (selected.uses >= 1) {
+                        selected.uses--;
 
-                    //adjusts care based on the change in stats stored in the item
-                    this->adjustCare(selected.changeInStats, true);
-                    std::cout
-                            << "Your raccoon fights it at first, but after a minute allows you to take care of him. His care stat has been increased by "
-                            << selected.changeInStats << "!";
-                    if(selected.uses == 0) {
-                        std::cout << " Unfortunately, the " << selected.nameOfItem << "has broken and is no longer usable.";
-                        //itemDeletion removes item from vector because no uses left
-                        itemDeletion(selected);
+                        //adjusts care based on the change in stats stored in the item
+                        this->adjustCare(selected.changeInStats, true);
+                        std::cout
+                                << "Your raccoon fights it at first, but after a minute allows you to take care of him. His care stat has been increased by "
+                                << selected.changeInStats << "!";
+                        if (selected.uses == 0) {
+                            std::cout << " Unfortunately, the " << selected.nameOfItem
+                                      << "has broken and is no longer usable.";
+                            //itemDeletion removes item from vector because no uses left
+                            itemDeletion(selected);
+                        }
                     }
-                }
 
-                //FIXME: this isn't stopping user from doing multiple things in a day
                 //raccoon has been cared for today, so bool caredToday turns to true and prevents user from caring for pet again for today only
                 this->caredToday = true;
                 std::cout << "\nReturning to inventory.\n";
@@ -436,6 +451,11 @@ void Raccoon::useItem(Item& selected) {
                 std::cout << "\nReturning to inventory.\n";
                 validResponse = true;
             }
+        }
+    }
+        else{
+            std::cout << "\nYou have already cared for your raccoon today. Wait until tomorrow to do it again.\n";
+            std::cout << "Returning to main menu...";
         }
     }
 }
