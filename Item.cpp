@@ -12,11 +12,11 @@ Item::Item(){
     nameOfItem = "Granny Smith Apple";
     uses = 1;
     changeInStats = 10;
-    description = "A large, bright green, tart apple, perfect for baking a pie with.";
+    description = "A large green apple, perfect for baking a pie with.";
 }
 
-bool operator==(const Item& lhs, const Item& rhs) {
-    return lhs.nameOfItem == rhs.nameOfItem;
+bool Item::operator==(const Item& rhs) {
+    return this->nameOfItem == rhs.nameOfItem;
 }
 
 

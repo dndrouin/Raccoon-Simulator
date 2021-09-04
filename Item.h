@@ -1,5 +1,5 @@
 //
-// (C) Danielle Drouin 2019 - github.com/dndrouin
+// (C) Danielle Drouin 2019-2021 - github.com/dndrouin
 //
 
 
@@ -17,7 +17,7 @@ public:
 
     //default constructor
     Item();
-    friend bool Item::operator==(const Item&, const Item&);
+      bool operator==(const Item&);
 };
 
 #endif

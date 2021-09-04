@@ -4,9 +4,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/untitled.dir/Raccoon.cpp.obj"
   "CMakeFiles/untitled.dir/RaccoonMethods.cpp.obj"
   "CMakeFiles/untitled.dir/main.cpp.obj"
+  "libuntitled.dll.a"
   "untitled.exe"
   "untitled.exe.manifest"
-  "untitled.lib"
   "untitled.pdb"
 )
 

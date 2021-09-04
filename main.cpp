@@ -161,7 +161,7 @@ int main() {
 
     //while raccoon is alive and the user hasn't selected save and exit, keep running the program
     while(!pet->dead && !gameEnded){
-
+        userEntry = "placeholder";
         //show user the navigation menu and allow them to pick what to do
         cout<<"\nMAIN MENU\n\t1. Stats \n\t2. Feed \n\t3. Play \n\t4. Care \n\t5. Store \n\t6. Advance to the next day\n\t7. Save & Exit\n";
         cout<<"Select an action:\n";

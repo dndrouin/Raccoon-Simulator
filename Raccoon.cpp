@@ -147,7 +147,6 @@ void Raccoon::listItems(int type) {
             std::cout << "No items found.\n\n";
         } else {
 
-            //FIXME: User typing in item number to select it doesn't select it - somehow off
 
             //otherwise, print their place in inventory and name
             for (size_t i = 0; i < food.size(); i++) {
@@ -163,9 +162,9 @@ void Raccoon::listItems(int type) {
             //validEntry will not change until they enter a number (limited by the number of items in the inventory)
 
             while (!validEntry) {
+                userEntry = "null";
                 std::cout << "Enter the number of an item to inspect it, or enter the last number to go back.  ";
                 std::cin >> userEntry;
-
                 //try and catch to ensure only numbers are entered
 
                 try {
@@ -176,7 +175,7 @@ void Raccoon::listItems(int type) {
                     std::cout << "That isn't a number.\n";
                 }
 
-                if (userEntryInt > 0 && userEntryInt < (int)food.size()) {
+                if (userEntryInt > 0 && userEntryInt <= (int)food.size()) {
                     inspectItem(food[userEntryInt - 1]);
                 } else if (userEntryInt - 1 == food.size()) {
                     //spacing to make everything less clumped together
@@ -185,7 +184,6 @@ void Raccoon::listItems(int type) {
                     validEntry = true;
 
                     //go back to the menu
-                    //FIXME: this doesn't go back to the menu
                 }
             }
 
@@ -194,21 +192,17 @@ void Raccoon::listItems(int type) {
 
     if(type == 2) {
         //list all play items
-        if(play.empty()){
-            //if there's none, just print the trash and that's it
-            std::cout << "\t1. Garbage Can\n";
-            std::cout << "\t2. Back to the Menu\n";
-
-        }
-        else {
+        if (play.empty()) {
+            //if there's none, inform the user
+            std::cout << "No items found.\n\n";
+        } else {
             //otherwise, print their place in inventory and name
             for (size_t i = 0; i < play.size(); i++) {
                 std::cout << "\t" << i + 1 << ". " << play[i].nameOfItem << "\n";
-                //if last item, print trash can and then option to go back as well
 
+                //if last item, print the option to go back as well
                 if (i == play.size() - 1) {
-                    std::cout << "\t" << i + 2 << ". Garbage Can\n";
-                    std::cout << "\t" << i + 3 << ". Back to the Menu\n";
+                    std::cout << "\t" << i + 2 << ". Back to the Menu\n";
                 }
             }
         }
@@ -222,25 +216,25 @@ void Raccoon::listItems(int type) {
             try {
                 userEntryInt = stoi(userEntry);
             }
-            catch (const std::invalid_argument &e){
-                (void)e;
+            catch (const std::invalid_argument &e) {
+                (void) e;
                 std::cout << "That isn't a number.\n";
             }
-            //TODO: fix the bounds of this so the garbage can doesn't screw it up
-            if (userEntryInt > 0 && userEntryInt <= (int)play.size()+2) {
+
+            if (userEntryInt > 0 && userEntryInt < (int) play.size()) {
                 inspectItem(play[userEntryInt - 1]);
-            } else if (userEntryInt == play.size()+2) {
+            } else if (userEntryInt - 1 == play.size()) {
+
                 //spacing to make everything less clumped together
                 std::cout << "\n";
                 validEntry = true;
+
                 //go back to the menu
-                //FIXME: this doesn't go back to the menu
             }
         }
     }
     if(type == 3) {
         //list all care items
-        //TODO: This
         if(cares.empty()){
             //if there's none, inform the user
             std::cout << "No items found.\n\n";
@@ -255,9 +249,8 @@ void Raccoon::listItems(int type) {
                     std::cout << "\t" << i + 2 << ". Back to the Menu\n";
                 }
             }
-
         }
-
+    }
         //ask the user if they would like to inspect an item or go back to menu
         //validEntry will not change until they enter a number (limited by the number of items in the inventory)
 
@@ -281,22 +274,19 @@ void Raccoon::listItems(int type) {
 
                 //after user has done something with item, return to menu
                 std::cout << "\n";
-                std::cout << "This would be going back to the menu if it was working.";
                 validEntry = true;
 
             } else if (userEntryInt - 1 == cares.size()) {
                 //spacing to make everything less clumped together
 
                 std::cout << "\n";
-                std::cout << "This would be going back to the menu if it was working.";
                 validEntry = true;
 
                 //go back to the menu
-                //FIXME: this doesn't go back to the menu
             }
         }
 
-    }
+
 }
 
 

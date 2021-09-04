@@ -35,8 +35,6 @@ void giveStarterItems(Raccoon* startPet){
     temp.nameOfItem = "Bowl of Cat Food";
     temp.changeInStats = 25;
     temp.description = "Smells like it might be chicken flavored.";
-
-    //add to inventory
     startPet->addItem(temp);
 
     //change temp to be red brush
@@ -46,11 +44,18 @@ void giveStarterItems(Raccoon* startPet){
     temp.uses = 5;
     startPet->addItem(temp);
 
+    //change temp to garbage can
+    temp.nameOfItem = "Garbage Can";
+    temp.description = "Full of trash and stinky, it might not be a good idea to let your raccoon play with this.";
+    temp.typeOfItem = 2;
+    temp.uses = 10;
+    startPet->addItem(temp);
+
     //and change temp to rainbow bouncy ball
     temp.nameOfItem = "Rainbow Bouncy Ball";
     temp.description = "So many colors! So bouncy!";
     temp.typeOfItem = 2;
-    temp.uses = 10;
+    temp.uses = 5;
     startPet->addItem(temp);
 }
 
